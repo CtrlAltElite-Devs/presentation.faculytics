@@ -4,10 +4,10 @@ import { SlideShell } from "../components/SlideShell";
 import type { SlideDef, SlideProps } from "./types";
 
 const team = [
-  { name: "Norhanah Umpar", photo: "/landing/umpar.png" },
-  { name: "Ethan Patrick Bandebas", photo: "/landing/bandebas.png" },
-  { name: "Leander Lorenz Lubguban", photo: "/landing/lubguban.png" },
-  { name: "Harvie Purgatorio", photo: "/landing/purgatorio.png" },
+  { name: "Norhanah Umpar", photo: "/landing/umpar_new.png" },
+  { name: "Ethan Patrick Bandebas", photo: "/landing/bandebas_new.png" },
+  { name: "Leander Lorenz Lubguban", photo: "/landing/lubguban_new.png" },
+  { name: "Harvie Purgatorio", photo: "/landing/purgatorio_new.png" },
 ];
 
 function TitleSlide({ buildStep }: SlideProps) {
@@ -151,9 +151,9 @@ function TitleSlide({ buildStep }: SlideProps) {
 
             <h1
               ref={titleRef}
-              className="font-display font-black leading-[0.95] tracking-tight"
+              className="font-display font-black leading-[0.95] tracking-tight whitespace-nowrap"
               style={{
-                fontSize: "clamp(4rem, 9vw, 9rem)",
+                fontSize: "clamp(3rem, 6.5vw, 6.5rem)",
                 background:
                   "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 50%, white))",
                 WebkitBackgroundClip: "text",
@@ -195,25 +195,17 @@ function TitleSlide({ buildStep }: SlideProps) {
 
             <div className="mt-4 flex gap-5">
               {team.map((t) => (
-                <div key={t.name} className="team-card flex flex-col items-center">
-                  <div
-                    className="size-20 overflow-hidden rounded-2xl"
+                <div key={t.name} className="team-card">
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    className="w-40 select-none"
+                    draggable={false}
                     style={{
-                      background:
-                        "linear-gradient(135deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 70%, black))",
-                      boxShadow:
-                        "0 10px 30px -10px color-mix(in oklab, var(--brand-blue) 50%, transparent)",
+                      filter:
+                        "drop-shadow(0 18px 30px color-mix(in oklab, var(--brand-blue) 28%, transparent))",
                     }}
-                  >
-                    <img
-                      src={t.photo}
-                      alt={t.name}
-                      className="size-full object-cover"
-                    />
-                  </div>
-                  <span className="mt-2 max-w-[110px] text-center text-base leading-tight font-medium text-foreground/95">
-                    {t.name}
-                  </span>
+                  />
                 </div>
               ))}
             </div>
@@ -224,14 +216,14 @@ function TitleSlide({ buildStep }: SlideProps) {
             <img
               src="/landing/laptop_faculytics.png"
               alt="Faculytics on laptop"
-              className="mock-laptop absolute right-0 top-[12%] w-[110%] max-w-none drop-shadow-2xl"
-              style={{ transform: "rotate(-8deg)" }}
+              className="mock-laptop absolute right-[-6%] top-[4%] w-[115%] max-w-none drop-shadow-2xl"
+              style={{ transform: "rotate(-6deg)" }}
             />
             <img
               src="/landing/phone_faculytics.png"
               alt="Faculytics on phone"
-              className="mock-phone absolute right-[4%] bottom-[2%] w-[28%] drop-shadow-2xl"
-              style={{ transform: "rotate(8deg)" }}
+              className="mock-phone absolute right-[-6%] bottom-[-12%] w-[62%] drop-shadow-2xl"
+              style={{ transform: "rotate(10deg)" }}
             />
           </div>
         </div>
