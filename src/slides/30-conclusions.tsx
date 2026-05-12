@@ -112,7 +112,7 @@ function ConclusionsSlide({}: SlideProps) {
             {conclusions.map((c, i) => (
               <li
                 key={i}
-                className="conc-pill rounded-full bg-card px-8 py-5 text-xl/[1.45] font-semibold text-foreground/85"
+                className="conc-pill rounded-full bg-card px-8 py-5 text-xl/[1.45] font-semibold text-foreground/95"
                 style={{
                   boxShadow:
                     "0 20px 45px -18px color-mix(in oklab, var(--brand-blue) 25%, transparent), 0 6px 16px -6px rgb(0 0 0 / 0.08)",

@@ -83,7 +83,7 @@ function RationaleSlide({}: SlideProps) {
           {rationale.map((text, i) => (
             <div
               key={i}
-              className="rationale-card relative flex items-center rounded-3xl bg-card px-7 py-7 text-lg/[1.45] font-medium text-foreground/85"
+              className="rationale-card relative flex items-center rounded-3xl bg-card px-8 py-8 text-3xl/[1.3] font-semibold text-foreground/95"
               style={{
                 boxShadow:
                   "0 20px 50px -20px color-mix(in oklab, var(--brand-blue) 18%, transparent), 0 6px 18px -6px rgb(0 0 0 / 0.07)",

@@ -16,6 +16,7 @@ import {
   uiTourSlides,
 } from "./ui-tour";
 import { slide30Conclusions } from "./30-conclusions";
+import { slide31ThankYou } from "./31-thankyou";
 
 const studentSlides = uiTourSlides.filter((s) => s.id.startsWith("ui-student-"));
 const facultySlides = uiTourSlides.filter((s) => s.id.startsWith("ui-faculty-"));
@@ -45,4 +46,5 @@ export const slides: SlideDef[] = [
 
   // Finale
   slide30Conclusions,
+  slide31ThankYou,
 ];

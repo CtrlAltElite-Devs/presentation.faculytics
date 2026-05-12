@@ -5,10 +5,10 @@ import type { SlideDef, SlideProps } from "./types";
 
 const stages = [
   { label: "Text\nPreprocessing", sub: "Raw Feedback\nto Clean Text", tone: 1 },
-  { label: "Sentiment\nClassification", sub: "Positive, Negative\nand Neutral", tone: 0.85 },
-  { label: "Sentiment\ngated filtering", sub: "Positive Feedback\ncontains at least\n10 words", tone: 0.65 },
-  { label: "Topic\nModeling", sub: "Topics", tone: 0.45 },
-  { label: "Recommendation\ngeneration", sub: "Context\nEngineering", tone: 0.2 },
+  { label: "Sentiment\nClassification", sub: "Positive, Negative\nand Neutral", tone: 0.9 },
+  { label: "Sentiment\ngated filtering", sub: "Positive Feedback\ncontains at least\n10 words", tone: 0.8 },
+  { label: "Topic\nModeling", sub: "Topics", tone: 0.7 },
+  { label: "Recommendation\ngeneration", sub: "Context\nEngineering", tone: 0.6 },
 ];
 
 function PipelineSlide({}: SlideProps) {
@@ -134,10 +134,11 @@ function PipelineSlide({}: SlideProps) {
                   background: `linear-gradient(150deg,
                     color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 95)}%, white),
                     color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 75 + 5)}%, white))`,
-                  color: s.tone > 0.4 ? "white" : "var(--brand-blue)",
+                  color: "white",
                   borderRadius: i === 0 ? "60% 18% 18% 60%" : i === stages.length - 1 ? "18% 60% 60% 18%" : "18%",
                   boxShadow:
                     "0 30px 60px -25px color-mix(in oklab, var(--brand-blue) 35%, transparent), 0 8px 24px -8px rgb(0 0 0 / 0.1)",
+                  textShadow: "0 1px 2px rgb(0 0 0 / 0.15)",
                 }}
               >
                 <span className="whitespace-pre-line">{s.label}</span>
@@ -180,7 +181,7 @@ function PipelineSlide({}: SlideProps) {
                   opacity: 0.85,
                 }}
               />
-              <p className="pipe-sublabel whitespace-pre-line text-base/[1.35] font-medium text-foreground/80">
+              <p className="pipe-sublabel whitespace-pre-line text-base/[1.35] font-medium text-foreground/95">
                 {s.sub}
               </p>
             </div>

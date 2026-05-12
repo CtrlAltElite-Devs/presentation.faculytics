@@ -69,6 +69,13 @@ function TitleSlide({ buildStep }: SlideProps) {
         "<0.3"
       );
 
+      // Congress metadata chips
+      tl.from(
+        ".meta-chip",
+        { y: 16, opacity: 0, stagger: 0.08, duration: 0.5 },
+        "<0.2"
+      );
+
       // Team avatars orbit in
       tl.from(
         ".team-card",
@@ -158,7 +165,7 @@ function TitleSlide({ buildStep }: SlideProps) {
             </h1>
 
             <p
-              className="title-sub max-w-2xl text-xl/[1.45] text-foreground/85"
+              className="title-sub max-w-2xl text-xl/[1.45] text-foreground/95"
               style={{ fontWeight: 500 }}
             >
               A Data Mining Approach for Feedback Analysis,
@@ -166,7 +173,27 @@ function TitleSlide({ buildStep }: SlideProps) {
               Generating Actionable Insights and Recommendations
             </p>
 
-            <div className="mt-6 flex gap-5">
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                "UC-CCS Research Congress 2026",
+                "May 13, 2026",
+                "14th Flr., Auditorium · UC Jones Bldg.",
+              ].map((m) => (
+                <span
+                  key={m}
+                  className="meta-chip rounded-full border-2 px-4 py-1.5 text-sm font-medium"
+                  style={{
+                    borderColor: "color-mix(in oklab, var(--brand-blue) 35%, transparent)",
+                    color: "var(--brand-blue)",
+                    background: "color-mix(in oklab, var(--brand-blue) 6%, white)",
+                  }}
+                >
+                  {m}
+                </span>
+              ))}
+            </div>
+
+            <div className="mt-4 flex gap-5">
               {team.map((t) => (
                 <div key={t.name} className="team-card flex flex-col items-center">
                   <div
@@ -184,7 +211,7 @@ function TitleSlide({ buildStep }: SlideProps) {
                       className="size-full object-cover"
                     />
                   </div>
-                  <span className="mt-2 max-w-[90px] text-center text-xs leading-tight font-medium text-foreground/85">
+                  <span className="mt-2 max-w-[110px] text-center text-base leading-tight font-medium text-foreground/95">
                     {t.name}
                   </span>
                 </div>
