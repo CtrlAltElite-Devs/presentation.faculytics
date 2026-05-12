@@ -95,15 +95,7 @@ function SentimentModelSlide({}: SlideProps) {
               </span>
             ))}
             <br />
-            <span
-              style={{
-                background:
-                  "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 50%, white))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
+            <span className="brand-gradient-text">
               {Array.from("Classification").map((c, i) => (
                 <span key={`b${i}`} className="char inline-block">
                   {c}

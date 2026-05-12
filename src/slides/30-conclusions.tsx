@@ -91,14 +91,9 @@ function ConclusionsSlide({}: SlideProps) {
             }}
           />
           <h2
-            className="conc-title relative font-display font-black leading-none tracking-tighter"
+            className="conc-title brand-gradient-text-40 relative font-display font-black leading-none tracking-tighter"
             style={{
               fontSize: "clamp(3rem, 5vw, 5rem)",
-              background:
-                "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 40%, white))",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
             }}
           >
             {Array.from("Conclusions").map((c, i) => (

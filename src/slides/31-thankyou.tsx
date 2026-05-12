@@ -100,14 +100,9 @@ function ThankYouSlide({}: SlideProps) {
 
         <h1
           ref={titleRef}
-          className="relative font-display font-black leading-[0.95] tracking-tight"
+          className="brand-gradient-text-45 relative font-display font-black leading-[0.95] tracking-tight"
           style={{
             fontSize: "clamp(5rem, 12vw, 12rem)",
-            background:
-              "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 45%, white))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
           }}
         >
           Thank You.

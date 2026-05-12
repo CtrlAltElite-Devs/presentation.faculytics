@@ -61,14 +61,9 @@ function RationaleSlide({}: SlideProps) {
     <SlideShell>
       <div ref={ref} className="flex h-full flex-col gap-10">
         <h2
-          className="rationale-title font-display font-black tracking-tight leading-none"
+          className="rationale-title brand-gradient-text font-display font-black tracking-tight leading-none"
           style={{
             fontSize: "clamp(4rem, 8vw, 8rem)",
-            background:
-              "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 50%, white))",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
           }}
         >
           {"Rationale".split("").map((c, i) => (
@@ -76,7 +71,7 @@ function RationaleSlide({}: SlideProps) {
               {c}
             </span>
           ))}
-          <span className="char inline-block text-brand-blue" style={{ WebkitTextFillColor: "var(--brand-blue)" }}>.</span>
+          <span className="char inline-block text-brand-blue" style={{ color: "var(--brand-blue)", WebkitTextFillColor: "var(--brand-blue)" }}>.</span>
         </h2>
 
         <div className="grid flex-1 grid-cols-3 grid-rows-2 gap-6">

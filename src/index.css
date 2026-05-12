@@ -50,6 +50,20 @@
   --border: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
 
+  /* Pre-computed brand-blue tints (linear interp toward white in oklab).
+     Chromium fails to render color-mix(in oklab, ...) stops inside a
+     linear-gradient when combined with background-clip: text — the text
+     paints as transparent. Use these direct oklch() values for any
+     gradient that feeds background-clip: text. */
+  --brand-blue-tint-10: oklch(0.943 0.025 264.53);
+  --brand-blue-tint-35: oklch(0.8 0.088 264.53);
+  --brand-blue-tint-40: oklch(0.771 0.1 264.53);
+  --brand-blue-tint-45: oklch(0.743 0.113 264.53);
+  --brand-blue-tint-50: oklch(0.714 0.125 264.53);
+  --brand-blue-tint-60: oklch(0.657 0.15 264.53);
+  --brand-blue-tint-65: oklch(0.628 0.163 264.53);
+  --brand-blue-tint-70: oklch(0.6 0.175 264.53);
+
   --font-geist-sans: "Geist", system-ui, -apple-system, sans-serif;
   --font-geist-mono: "Geist Mono", ui-monospace, monospace;
   --font-display: "Space Grotesk", "Geist", system-ui, sans-serif;
@@ -116,6 +130,68 @@
 
   .text-shadow-glow {
     text-shadow: 0 0 40px color-mix(in oklab, var(--brand-yellow) 50%, transparent);
+  }
+
+  /* Brand gradient text. Two-part fix for Chromium:
+     1. Pre-computed oklch tints (color-mix(in oklab, ...) inside a
+        linear-gradient breaks background-clip: text painting).
+     2. Apply the gradient + clip to the element AND all descendants.
+        Chromium's background-clip: text does NOT paint through descendants
+        that own a stacking context (transform/filter/opacity, including
+        residual translate3d() and blur(0px) left by GSAP after .from()
+        tweens). Painting each leaf node directly sidesteps this.
+     Inline char spans that need a solid color (e.g. a period) override
+     color + -webkit-text-fill-color via inline style, which wins over
+     these rules. */
+  .brand-gradient-text,
+  .brand-gradient-text *,
+  .brand-gradient-text-50,
+  .brand-gradient-text-50 * {
+    background-image: linear-gradient(120deg, var(--brand-blue), var(--brand-blue-tint-50));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .brand-gradient-text-50-vert,
+  .brand-gradient-text-50-vert * {
+    background-image: linear-gradient(180deg, var(--brand-blue), var(--brand-blue-tint-50));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .brand-gradient-text-45,
+  .brand-gradient-text-45 * {
+    background-image: linear-gradient(120deg, var(--brand-blue), var(--brand-blue-tint-45));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .brand-gradient-text-40,
+  .brand-gradient-text-40 * {
+    background-image: linear-gradient(120deg, var(--brand-blue), var(--brand-blue-tint-40));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .brand-gradient-text-35,
+  .brand-gradient-text-35 * {
+    background-image: linear-gradient(120deg, var(--brand-blue), var(--brand-blue-tint-35));
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .brand-gradient-text-10-fade,
+  .brand-gradient-text-10-fade * {
+    background-image: linear-gradient(120deg, var(--brand-blue-tint-10), transparent);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   /* Hide scrollbar utility */
