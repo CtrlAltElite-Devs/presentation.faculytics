@@ -91,9 +91,9 @@ function ConclusionsSlide({}: SlideProps) {
             }}
           />
           <h2
-            className="conc-title relative font-display font-black leading-none tracking-tight"
+            className="conc-title relative font-display font-black leading-none tracking-tighter"
             style={{
-              fontSize: "clamp(3.5rem, 7vw, 7rem)",
+              fontSize: "clamp(3rem, 5vw, 5rem)",
               background:
                 "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 40%, white))",
               WebkitBackgroundClip: "text",
@@ -112,7 +112,7 @@ function ConclusionsSlide({}: SlideProps) {
             {conclusions.map((c, i) => (
               <li
                 key={i}
-                className="conc-pill rounded-full bg-card px-8 py-5 text-xl/[1.45] font-semibold text-foreground/85"
+                className="conc-pill rounded-full bg-card px-8 py-5 text-xl/[1.45] font-semibold text-foreground/95"
                 style={{
                   boxShadow:
                     "0 20px 45px -18px color-mix(in oklab, var(--brand-blue) 25%, transparent), 0 6px 16px -6px rgb(0 0 0 / 0.08)",
@@ -140,9 +140,9 @@ function ConclusionsSlide({}: SlideProps) {
             }}
           />
           <h2
-            className="rec-title relative font-display font-black leading-none tracking-tight"
+            className="rec-title relative font-display font-black leading-none tracking-tighter"
             style={{
-              fontSize: "clamp(3.5rem, 7vw, 7rem)",
+              fontSize: "clamp(3rem, 5vw, 5rem)",
               color: "white",
             }}
           >

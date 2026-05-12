@@ -102,7 +102,7 @@ function DesignSlide({}: SlideProps) {
             {cards.map((c, i) => (
               <div
                 key={i}
-                className="design-card rounded-3xl bg-card px-8 py-7 text-xl/[1.5] font-medium text-foreground/85"
+                className="design-card rounded-3xl bg-card px-8 py-7 text-xl/[1.5] font-medium text-foreground/95"
                 style={{
                   boxShadow:
                     "0 25px 60px -25px color-mix(in oklab, var(--brand-blue) 22%, transparent), 0 6px 20px -6px rgb(0 0 0 / 0.08)",

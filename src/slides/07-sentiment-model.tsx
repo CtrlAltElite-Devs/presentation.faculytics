@@ -83,9 +83,9 @@ function SentimentModelSlide({}: SlideProps) {
             />
           </svg>
           <h2
-            className="sm-title relative font-display font-black leading-[0.95] tracking-tight"
+            className="sm-title relative font-display font-black leading-[0.95] tracking-tighter"
             style={{
-              fontSize: "clamp(3rem, 6vw, 6rem)",
+              fontSize: "clamp(2.5rem, 4.5vw, 4.5rem)",
               color: "var(--foreground)",
             }}
           >
@@ -135,7 +135,7 @@ function SentimentModelSlide({}: SlideProps) {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="sm-text max-w-2xl text-2xl/[1.45] font-medium text-foreground/85">
+              <span className="sm-text max-w-2xl text-2xl/[1.45] font-medium text-foreground/95">
                 {text}
               </span>
             </li>

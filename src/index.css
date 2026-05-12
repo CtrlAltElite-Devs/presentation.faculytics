@@ -21,7 +21,7 @@
 
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-playfair: var(--font-playfair);
+  --font-display: var(--font-display);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -52,7 +52,7 @@
 
   --font-geist-sans: "Geist", system-ui, -apple-system, sans-serif;
   --font-geist-mono: "Geist Mono", ui-monospace, monospace;
-  --font-playfair: "Playfair Display", Georgia, serif;
+  --font-display: "Space Grotesk", "Geist", system-ui, sans-serif;
 }
 
 @layer base {
@@ -107,7 +107,7 @@
   }
 
   .font-display {
-    font-family: var(--font-playfair);
+    font-family: var(--font-display);
   }
 
   .font-mono-deck {

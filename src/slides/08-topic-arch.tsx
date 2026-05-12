@@ -50,7 +50,7 @@ function TopicArchSlide({}: SlideProps) {
         <ol className="flex flex-col gap-7 pr-12">
           {items.map((text, i) => (
             <li key={i} className="flex items-baseline justify-end gap-6">
-              <span className="ta-text max-w-2xl text-right text-2xl/[1.45] font-medium text-foreground/85">
+              <span className="ta-text max-w-2xl text-right text-2xl/[1.45] font-medium text-foreground/95">
                 {text}
               </span>
               <span
@@ -86,9 +86,9 @@ function TopicArchSlide({}: SlideProps) {
             />
           </svg>
           <h2
-            className="ta-title relative text-right font-display font-black leading-[0.95] tracking-tight"
+            className="ta-title relative text-right font-display font-black leading-[0.95] tracking-tighter"
             style={{
-              fontSize: "clamp(3rem, 5.5vw, 5.5rem)",
+              fontSize: "clamp(2.5rem, 4.5vw, 4.5rem)",
               color: "var(--foreground)",
             }}
           >
