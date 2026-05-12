@@ -91,9 +91,9 @@ function ConclusionsSlide({}: SlideProps) {
             }}
           />
           <h2
-            className="conc-title relative font-display font-black leading-none tracking-tight"
+            className="conc-title relative font-display font-black leading-none tracking-tighter"
             style={{
-              fontSize: "clamp(3.5rem, 7vw, 7rem)",
+              fontSize: "clamp(3rem, 5vw, 5rem)",
               background:
                 "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 40%, white))",
               WebkitBackgroundClip: "text",
@@ -140,9 +140,9 @@ function ConclusionsSlide({}: SlideProps) {
             }}
           />
           <h2
-            className="rec-title relative font-display font-black leading-none tracking-tight"
+            className="rec-title relative font-display font-black leading-none tracking-tighter"
             style={{
-              fontSize: "clamp(3.5rem, 7vw, 7rem)",
+              fontSize: "clamp(3rem, 5vw, 5rem)",
               color: "white",
             }}
           >
