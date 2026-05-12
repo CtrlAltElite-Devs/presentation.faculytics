@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-neutral: var(--brand-neutral);
+  --color-surface: var(--surface);
+  --color-surface-alt: var(--surface-alt);
+  --color-sentiment-positive: var(--sentiment-positive);
+  --color-sentiment-neutral: var(--sentiment-neutral);
+  --color-sentiment-negative: var(--sentiment-negative);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-playfair: var(--font-playfair);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --brand-blue: oklch(0.428 0.25 264.53);
+  --brand-yellow: oklch(0.898 0.196 91.13);
+  --brand-neutral: oklch(0.982 0.005 84.15);
+  --surface: oklch(0.975 0.002 264.53);
+  --surface-alt: oklch(0.96 0.004 264.53);
+  --sentiment-positive: oklch(0.428 0.25 264.53);
+  --sentiment-neutral: oklch(0.82 0.16 85);
+  --sentiment-negative: oklch(0.65 0.22 20);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+
+  --font-geist-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-geist-mono: "Geist Mono", ui-monospace, monospace;
+  --font-playfair: "Playfair Display", Georgia, serif;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-geist-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: color-mix(in oklab, var(--brand-blue) 20%, transparent);
+    color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .deck-bg {
+    background-image:
+      radial-gradient(
+        circle at top left,
+        color-mix(in oklab, var(--brand-yellow) 30%, transparent),
+        transparent 34%
+      ),
+      radial-gradient(
+        circle at top right,
+        color-mix(in oklab, var(--brand-blue) 22%, transparent),
+        transparent 38%
+      ),
+      linear-gradient(180deg, var(--surface) 0%, var(--background) 32%);
+    background-attachment: fixed;
+  }
+
+  .panel-surface {
+    border: 1px solid color-mix(in oklab, var(--border) 70%, transparent);
+    background-color: color-mix(in oklab, var(--surface) 85%, transparent);
+    backdrop-filter: blur(12px);
+  }
+
+  .font-display {
+    font-family: var(--font-playfair);
+  }
+
+  .font-mono-deck {
+    font-family: var(--font-geist-mono);
+  }
+
+  .text-shadow-glow {
+    text-shadow: 0 0 40px color-mix(in oklab, var(--brand-yellow) 50%, transparent);
+  }
+
+  /* Hide scrollbar utility */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Stage area aspect ratio: 16:9 fits podium projectors */
+.deck-stage {
+  aspect-ratio: 16 / 9;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: min(100vh, calc(100vw * 9 / 16));
+}
