@@ -151,14 +151,9 @@ function TitleSlide({ buildStep }: SlideProps) {
 
             <h1
               ref={titleRef}
-              className="font-display font-black leading-[0.95] tracking-tight whitespace-nowrap"
+              className="brand-gradient-text font-display font-black leading-[0.95] tracking-tight whitespace-nowrap"
               style={{
                 fontSize: "clamp(3rem, 6.5vw, 6.5rem)",
-                background:
-                  "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 50%, white))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
               }}
             >
               Faculytics 2.0

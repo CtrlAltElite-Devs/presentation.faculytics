@@ -228,15 +228,7 @@ function makeUiSlide({
                   {c}
                 </span>
               ))}
-              <span
-                style={{
-                  background:
-                    "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 50%, white))",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
+              <span className="brand-gradient-text">
                 {Array.from("Interface").map((c, i) => (
                   <span key={`b${i}`} className="char inline-block">
                     {c}
@@ -369,13 +361,8 @@ function makeDivider({ id, role, subtitle }: DividerArgs): SlideDef {
         <div ref={ref} className="relative grid h-full w-full place-items-center">
           {/* Background number watermark */}
           <span
-            className="pointer-events-none absolute inset-0 grid place-items-center font-display text-[40vh] font-black leading-none tracking-tight"
+            className="brand-gradient-text-10-fade pointer-events-none absolute inset-0 grid place-items-center font-display text-[40vh] font-black leading-none tracking-tight"
             style={{
-              background:
-                "linear-gradient(120deg, color-mix(in oklab, var(--brand-blue) 10%, transparent), transparent)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
               opacity: 0.6,
             }}
             aria-hidden
@@ -396,14 +383,9 @@ function makeDivider({ id, role, subtitle }: DividerArgs): SlideDef {
               User Experience
             </p>
             <h2
-              className="divider-title font-display font-black leading-[0.95] tracking-tight"
+              className="divider-title brand-gradient-text-35 font-display font-black leading-[0.95] tracking-tight"
               style={{
                 fontSize: "clamp(5rem, 12vw, 14rem)",
-                background:
-                  "linear-gradient(120deg, var(--brand-blue), color-mix(in oklab, var(--brand-blue) 35%, white))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
               }}
             >
               {Array.from(role).map((c, i) => (
