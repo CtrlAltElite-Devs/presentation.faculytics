@@ -67,7 +67,8 @@ function TopicResultsSlide({}: SlideProps) {
           <span className="char inline-block" style={{ color: "var(--brand-blue)" }}>.</span>
         </h2>
 
-        <div className="tr-table-wrap mx-auto flex-1 overflow-hidden rounded-3xl border-4 max-w-5xl w-full"
+        <div className="flex flex-1 flex-col justify-center">
+        <div className="tr-table-wrap mx-auto overflow-hidden rounded-3xl border-4 max-w-5xl w-full"
           style={{ borderColor: "var(--brand-blue)" }}
         >
           <table className="w-full table-fixed border-collapse text-lg">
@@ -124,6 +125,7 @@ function TopicResultsSlide({}: SlideProps) {
           </strong>{" "}
           exceeded benchmark target.
         </p>
+        </div>
       </div>
     </SlideShell>
   );

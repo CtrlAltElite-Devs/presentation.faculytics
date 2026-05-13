@@ -151,7 +151,7 @@ function SentimentResultsSlide({ buildStep }: SlideProps) {
           </div>
         ) : (
           <div className="sr-tables flex flex-1 flex-col gap-10 pt-10">
-            <div className="grid flex-1 grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-8 items-start">
               {/* Per-class table */}
               <div
                 className="sr-table-card overflow-hidden rounded-3xl border-4"
