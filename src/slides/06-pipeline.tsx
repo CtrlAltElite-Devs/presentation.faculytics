@@ -127,7 +127,7 @@ function PipelineSlide({}: SlideProps) {
                     color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 95)}%, white),
                     color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 75 + 5)}%, white))`,
                   color: "white",
-                  borderRadius: i === 0 ? "60% 18% 18% 60%" : i === stages.length - 1 ? "18% 60% 60% 18%" : "18%",
+                  borderRadius: i === 0 ? "45% 18% 18% 45%" : i === stages.length - 1 ? "18% 45% 45% 18%" : "18%",
                   boxShadow:
                     "0 30px 60px -25px color-mix(in oklab, var(--brand-blue) 35%, transparent), 0 8px 24px -8px rgb(0 0 0 / 0.1)",
                   textShadow: "0 1px 2px rgb(0 0 0 / 0.15)",
@@ -173,7 +173,7 @@ function PipelineSlide({}: SlideProps) {
                   opacity: 0.85,
                 }}
               />
-              <p className="pipe-sublabel whitespace-pre-line text-base/[1.35] font-medium text-foreground/95">
+              <p className="pipe-sublabel whitespace-pre-line text-xl/[1.35] font-medium text-foreground/95">
                 {s.sub}
               </p>
             </div>
