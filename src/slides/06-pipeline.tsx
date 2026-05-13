@@ -117,67 +117,72 @@ function PipelineSlide({}: SlideProps) {
           <span className="char inline-block" style={{ color: "var(--brand-blue)" }}>.</span>
         </h2>
 
-        <div className="pipeline-row relative flex flex-1 items-center justify-center gap-2 pb-12">
-          {stages.map((s, i) => (
-            <div key={i} className="flex flex-1 items-center">
-              <div
-                className="pipe-stage relative grid aspect-square w-full max-w-[19vh] place-items-center px-4 text-center font-display text-xl/[1.15] font-semibold"
-                style={{
-                  background: `linear-gradient(150deg,
-                    color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 95)}%, white),
-                    color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 75 + 5)}%, white))`,
-                  color: "white",
-                  borderRadius: i === 0 ? "45% 18% 18% 45%" : i === stages.length - 1 ? "18% 45% 45% 18%" : "18%",
-                  boxShadow:
-                    "0 30px 60px -25px color-mix(in oklab, var(--brand-blue) 35%, transparent), 0 8px 24px -8px rgb(0 0 0 / 0.1)",
-                  textShadow: "0 1px 2px rgb(0 0 0 / 0.15)",
-                }}
-              >
-                <span className="whitespace-pre-line">{s.label}</span>
-              </div>
-              {i < stages.length - 1 && (
-                <div className="pipe-connector relative mx-1 h-[3px] flex-1 rounded-full"
+        <div className="flex flex-1 flex-col justify-center">
+          <div className="pipeline-row relative flex items-center justify-center gap-2">
+            {stages.map((s, i) => (
+              <div key={i} className="flex flex-1 items-center">
+                <div
+                  className="pipe-stage relative grid aspect-square w-full max-w-[19vh] place-items-center px-4 text-center font-display text-xl/[1.15] font-semibold"
                   style={{
-                    background:
-                      "linear-gradient(90deg, color-mix(in oklab, var(--brand-blue) 60%, white), color-mix(in oklab, var(--brand-blue) 30%, white))",
+                    background: `linear-gradient(150deg,
+                      color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 95)}%, white),
+                      color-mix(in oklab, var(--brand-blue) ${Math.round(s.tone * 75 + 5)}%, white))`,
+                    color: "white",
+                    borderRadius: i === 0 ? "45% 18% 18% 45%" : i === stages.length - 1 ? "18% 45% 45% 18%" : "18%",
+                    boxShadow:
+                      "0 30px 60px -25px color-mix(in oklab, var(--brand-blue) 35%, transparent), 0 8px 24px -8px rgb(0 0 0 / 0.1)",
+                    textShadow: "0 1px 2px rgb(0 0 0 / 0.15)",
                   }}
-                />
-              )}
-            </div>
-          ))}
-          <div
-            className="traveler pointer-events-none absolute top-1/2 size-3 -translate-y-1/2 rounded-full"
-            style={{
-              background: "var(--brand-blue)",
-              boxShadow:
-                "0 0 0 4px color-mix(in oklab, var(--brand-blue) 25%, transparent), 0 0 16px color-mix(in oklab, var(--brand-blue) 50%, transparent)",
-            }}
-          />
-        </div>
+                >
+                  <span className="whitespace-pre-line">{s.label}</span>
+                </div>
+                {i < stages.length - 1 && (
+                  <div className="pipe-connector relative mx-1 h-[3px] flex-1 rounded-full"
+                    style={{
+                      background:
+                        "linear-gradient(90deg, color-mix(in oklab, var(--brand-blue) 60%, white), color-mix(in oklab, var(--brand-blue) 30%, white))",
+                    }}
+                  />
+                )}
+              </div>
+            ))}
+            <div
+              className="traveler pointer-events-none absolute top-1/2 size-3 -translate-y-1/2 rounded-full"
+              style={{
+                background: "var(--brand-blue)",
+                boxShadow:
+                  "0 0 0 4px color-mix(in oklab, var(--brand-blue) 25%, transparent), 0 0 16px color-mix(in oklab, var(--brand-blue) 50%, transparent)",
+              }}
+            />
+          </div>
 
-        {/* Sub-labels below */}
-        <div className="grid grid-cols-5 gap-2 pb-2">
-          {stages.map((s, i) => (
-            <div key={i} className="relative grid place-items-center text-center">
-              <div
-                className="absolute -top-12 left-1/2 -translate-x-1/2 h-12 w-[2px]"
-                style={{
-                  background:
-                    "linear-gradient(180deg, color-mix(in oklab, var(--brand-blue) 60%, transparent), transparent)",
-                }}
-              />
-              <div
-                className="absolute -top-12 left-1/2 -translate-x-1/2 size-3.5 rounded-full"
-                style={{
-                  background: "var(--brand-blue)",
-                  opacity: 0.85,
-                }}
-              />
-              <p className="pipe-sublabel whitespace-pre-line text-xl/[1.35] font-medium text-foreground/95">
-                {s.sub}
-              </p>
-            </div>
-          ))}
+          {/* Sub-labels below — mirror the box flex layout so each label aligns under its stage */}
+          <div className="mt-4 flex justify-center gap-2">
+            {stages.map((s, i) => (
+              <div key={i} className="flex flex-1 items-start">
+                <div className="flex w-full max-w-[19vh] flex-col items-center text-center">
+                  <div
+                    className="size-3 rounded-full"
+                    style={{
+                      background: "var(--brand-blue)",
+                      opacity: 0.85,
+                    }}
+                  />
+                  <div
+                    className="h-4 w-[2px]"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, color-mix(in oklab, var(--brand-blue) 60%, transparent), transparent)",
+                    }}
+                  />
+                  <p className="pipe-sublabel whitespace-pre-line text-xl/[1.35] font-medium text-foreground/95">
+                    {s.sub}
+                  </p>
+                </div>
+                {i < stages.length - 1 && <div className="flex-1" />}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </SlideShell>

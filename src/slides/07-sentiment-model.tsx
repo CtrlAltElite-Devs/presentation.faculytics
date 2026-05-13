@@ -127,7 +127,7 @@ function SentimentModelSlide({}: SlideProps) {
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <span className="sm-text max-w-2xl text-2xl/[1.45] font-medium text-foreground/95">
+              <span className="sm-text max-w-2xl text-3xl/[1.4] font-medium text-foreground/95">
                 {text}
               </span>
             </li>

@@ -67,7 +67,7 @@ function TopicResultsSlide({}: SlideProps) {
           <span className="char inline-block" style={{ color: "var(--brand-blue)" }}>.</span>
         </h2>
 
-        <div className="flex flex-1 flex-col justify-center">
+        <div className="flex flex-1 flex-col">
         <div className="tr-table-wrap mx-auto overflow-hidden rounded-3xl border-4 max-w-5xl w-full"
           style={{ borderColor: "var(--brand-blue)" }}
         >
@@ -118,7 +118,7 @@ function TopicResultsSlide({}: SlideProps) {
           </table>
         </div>
 
-        <p className="tr-caption mt-10 text-xl/[1.5] font-medium text-foreground/85">
+        <p className="tr-caption mx-auto mt-10 max-w-5xl text-center text-xl/[1.5] font-medium text-foreground/85">
           After 13 runs,{" "}
           <strong className="font-display font-bold" style={{ color: "var(--brand-blue)" }}>
             topic modeling

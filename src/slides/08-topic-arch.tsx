@@ -50,7 +50,7 @@ function TopicArchSlide({}: SlideProps) {
         <ol className="flex flex-col gap-7 pr-12">
           {items.map((text, i) => (
             <li key={i} className="flex items-baseline justify-end gap-6">
-              <span className="ta-text max-w-2xl text-right text-2xl/[1.45] font-medium text-foreground/95">
+              <span className="ta-text max-w-2xl text-right text-3xl/[1.4] font-medium text-foreground/95">
                 {text}
               </span>
               <span
@@ -71,7 +71,7 @@ function TopicArchSlide({}: SlideProps) {
           <svg
             viewBox="0 0 200 400"
             className="absolute -left-12 top-1/2 h-[80%] w-auto -translate-y-1/2"
-            style={{ transform: "translateY(-50%) scaleX(-1)" }}
+            style={{ transform: "scaleX(-1)" }}
           >
             <defs>
               <linearGradient id="ta-arc-grad" x1="0%" y1="0%" x2="100%" y2="100%">
