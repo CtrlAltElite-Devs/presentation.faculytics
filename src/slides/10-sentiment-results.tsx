@@ -150,76 +150,73 @@ function SentimentResultsSlide({ buildStep }: SlideProps) {
             </p>
           </div>
         ) : (
-          <div className="sr-tables flex flex-1 flex-col gap-10 pt-10">
-            <div className="grid grid-cols-2 gap-8 items-start">
-              {/* Per-class table */}
-              <div
-                className="sr-table-card overflow-hidden rounded-3xl border-4"
-                style={{ borderColor: "var(--brand-blue)" }}
-              >
-                <table className="w-full table-fixed text-base">
-                  <thead>
-                    <tr style={{ background: "oklch(0.21 0.008 264.53)", color: "white" }}>
-                      <th className="px-4 py-3.5 text-left">Class</th>
-                      <th className="px-4 py-3.5 text-left">Precision</th>
-                      <th className="px-4 py-3.5 text-left">Recall</th>
-                      <th className="px-4 py-3.5 text-left">F1-Score</th>
-                      <th className="px-4 py-3.5 text-left">Support</th>
+          <div className="sr-tables flex flex-1 flex-col items-center justify-center gap-4 pt-6">
+            {/* Per-class table */}
+            <div
+              className="sr-table-card w-full max-w-4xl overflow-hidden rounded-3xl border-4"
+              style={{ borderColor: "var(--brand-blue)" }}
+            >
+              <table className="w-full table-fixed text-base">
+                <thead>
+                  <tr style={{ background: "oklch(0.21 0.008 264.53)", color: "white" }}>
+                    <th className="px-4 py-3 text-left">Class</th>
+                    <th className="px-4 py-3 text-left">Precision</th>
+                    <th className="px-4 py-3 text-left">Recall</th>
+                    <th className="px-4 py-3 text-left">F1-Score</th>
+                    <th className="px-4 py-3 text-left">Support</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {classRows.map((r, i) => (
+                    <tr key={r.c} className="sr-table-row" style={{ background: i % 2 === 0 ? "var(--card)" : "oklch(0.97 0 0)" }}>
+                      <td className="px-4 py-3 font-medium">{r.c}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.precision}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.recall}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.f1}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.support}</td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {classRows.map((r, i) => (
-                      <tr key={r.c} className="sr-table-row" style={{ background: i % 2 === 0 ? "var(--card)" : "oklch(0.97 0 0)" }}>
-                        <td className="px-4 py-3.5 font-medium">{r.c}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.precision}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.recall}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.f1}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.support}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {/* Per-language table */}
-              <div
-                className="sr-table-card overflow-hidden rounded-3xl border-4"
-                style={{ borderColor: "var(--brand-blue)" }}
-              >
-                <table className="w-full table-fixed text-base">
-                  <thead>
-                    <tr style={{ background: "oklch(0.21 0.008 264.53)", color: "white" }}>
-                      <th className="px-4 py-3.5 text-left">Language</th>
-                      <th className="px-4 py-3.5 text-left">N</th>
-                      <th className="px-4 py-3.5 text-left">Accuracy</th>
-                      <th className="px-4 py-3.5 text-left">Macro F1</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {langRows.map((r, i) => (
-                      <tr key={r.lang} className="sr-table-row" style={{ background: i % 2 === 0 ? "var(--card)" : "oklch(0.97 0 0)" }}>
-                        <td className="px-4 py-3.5 font-medium">{r.lang}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.n}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.acc}</td>
-                        <td className="px-4 py-3.5 font-mono-deck">{r.f1}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
+                  ))}
+                </tbody>
+              </table>
             </div>
 
-            <div className="grid grid-cols-2 gap-8">
-              <p className="sr-footer text-lg/[1.45] font-medium text-foreground/95">
-                All language types exceeded{" "}
-                <strong className="font-display" style={{ color: "var(--brand-blue)" }}>0.95 macro F1.</strong>
-              </p>
-              <p className="sr-footer text-lg/[1.45] font-medium text-foreground/95">
-                Model achieved{" "}
-                <strong className="font-display" style={{ color: "var(--brand-blue)" }}>96.86% accuracy</strong>{" "}
-                across all sentiments.
-              </p>
+            <p className="sr-footer text-center text-lg/[1.45] font-medium text-foreground/95">
+              Model achieved{" "}
+              <strong className="font-display" style={{ color: "var(--brand-blue)" }}>96.86% accuracy</strong>{" "}
+              across all sentiments.
+            </p>
+
+            {/* Per-language table */}
+            <div
+              className="sr-table-card w-full max-w-4xl overflow-hidden rounded-3xl border-4"
+              style={{ borderColor: "var(--brand-blue)" }}
+            >
+              <table className="w-full table-fixed text-base">
+                <thead>
+                  <tr style={{ background: "oklch(0.21 0.008 264.53)", color: "white" }}>
+                    <th className="px-4 py-3 text-left">Language</th>
+                    <th className="px-4 py-3 text-left">N</th>
+                    <th className="px-4 py-3 text-left">Accuracy</th>
+                    <th className="px-4 py-3 text-left">Macro F1</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {langRows.map((r, i) => (
+                    <tr key={r.lang} className="sr-table-row" style={{ background: i % 2 === 0 ? "var(--card)" : "oklch(0.97 0 0)" }}>
+                      <td className="px-4 py-3 font-medium">{r.lang}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.n}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.acc}</td>
+                      <td className="px-4 py-3 font-mono-deck">{r.f1}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
+
+            <p className="sr-footer text-center text-lg/[1.45] font-medium text-foreground/95">
+              All language types exceeded{" "}
+              <strong className="font-display" style={{ color: "var(--brand-blue)" }}>0.95 macro F1.</strong>
+            </p>
           </div>
         )}
       </div>

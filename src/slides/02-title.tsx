@@ -160,7 +160,7 @@ function TitleSlide({ buildStep }: SlideProps) {
             </h1>
 
             <p
-              className="title-sub max-w-2xl text-xl/[1.45] text-foreground/95"
+              className="title-sub max-w-2xl text-2xl/[1.45] text-foreground/95"
               style={{ fontWeight: 500 }}
             >
               A Data Mining Approach for Feedback Analysis,
@@ -211,13 +211,13 @@ function TitleSlide({ buildStep }: SlideProps) {
             <img
               src="/landing/laptop_faculytics.png"
               alt="Faculytics on laptop"
-              className="mock-laptop absolute right-[-6%] top-[4%] w-[115%] max-w-none drop-shadow-2xl"
+              className="mock-laptop absolute right-[-6%] top-[-6%] w-[115%] max-w-none drop-shadow-2xl"
               style={{ transform: "rotate(-6deg)" }}
             />
             <img
               src="/landing/phone_faculytics.png"
               alt="Faculytics on phone"
-              className="mock-phone absolute right-[-6%] bottom-[-12%] w-[62%] drop-shadow-2xl"
+              className="mock-phone absolute right-[-6%] bottom-[-2%] w-[62%] drop-shadow-2xl"
               style={{ transform: "rotate(10deg)" }}
             />
           </div>
