@@ -147,7 +147,7 @@ function PipelineSlide({}: SlideProps) {
               </div>
             ))}
             <div
-              className="traveler pointer-events-none absolute top-1/2 size-3 -translate-y-1/2 rounded-full"
+              className="traveler pointer-events-none absolute left-0 top-1/2 size-3 -translate-y-1/2 rounded-full"
               style={{
                 background: "var(--brand-blue)",
                 boxShadow:
